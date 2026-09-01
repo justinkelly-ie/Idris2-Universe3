@@ -7,6 +7,7 @@ import Core.UnixelFraction
 import Core.Polynumber
 import Math.FourGeometries
 import Math.DiscreteBoltzmannDistribution
+import Math.FineStructure
 import Data.List
 
 %default total
@@ -59,7 +60,7 @@ discreteHelmholtzFreeEnergy t part =
 public export
 standardCosmic210Partition : CosmicBudgetPartition
 standardCosmic210Partition =
-  MkCosmicBudgetPartition (intToBoxInt 27) (intToBoxInt 128) (intToBoxInt 55)
+  MkCosmicBudgetPartition visibleMatterCapacity darkEnergyROM darkMatterResidueEpoch37
 
 ||| Audits Discrete Helmholtz Free Energy Minimization at Equilibrium (T = 2):
 ||| For 210 ground state (27, 128, 55):

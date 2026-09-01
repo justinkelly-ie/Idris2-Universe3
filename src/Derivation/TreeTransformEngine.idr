@@ -36,8 +36,8 @@ treeToBox (Node l x c r) =
 
 ||| Applies pushforward contraction (f_*) over an O(log N) MultisetTree.
 public export
-applyPushforwardTreeContraction : Ord a => Ord b => TransformMultiset a b -> MultisetTree a -> MultisetTree b
-applyPushforwardTreeContraction (MkTransformMultiset _ _ (MkBox tPairs)) tree =
+applyPushforwardTreeContraction : Ord a => Ord b => MaxelTransform a b -> MultisetTree a -> MultisetTree b
+applyPushforwardTreeContraction (MkMaxelTransform _ _ (MkBox tPairs)) tree =
   foldl (\acc, ((a, b), wT) =>
            let wM = lookupTokenTree a tree
                wMult = wM * cast (unwrapBox wT)
@@ -45,8 +45,8 @@ applyPushforwardTreeContraction (MkTransformMultiset _ _ (MkBox tPairs)) tree =
 
 ||| Applies pullback expansion (f^*) over an O(log N) MultisetTree.
 public export
-applyPullbackTreeExpansion : Ord a => Ord b => TransformMultiset a b -> MultisetTree b -> MultisetTree a
-applyPullbackTreeExpansion (MkTransformMultiset _ _ (MkBox tPairs)) targetTree =
+applyPullbackTreeExpansion : Ord a => Ord b => MaxelTransform a b -> MultisetTree b -> MultisetTree a
+applyPullbackTreeExpansion (MkMaxelTransform _ _ (MkBox tPairs)) targetTree =
   foldl (\acc, ((a, b), wT) =>
            let wN = lookupTokenTree b targetTree
                wMult = wN * cast (unwrapBox wT)
@@ -66,13 +66,21 @@ Ord ColorCharge where
   compare GreenColor BlueColor = LT
   compare BlueColor _ = GT
 
+||| Helper mapping HadronToken to Nat for total Ord comparison
+public export
+hadronToNat : HadronToken -> Nat
+hadronToNat ProtonToken = 0
+hadronToNat NeutronToken = 1
+hadronToNat LambdaBaryonToken = 2
+hadronToNat PionPlusToken = 3
+hadronToNat PionMinusToken = 4
+hadronToNat NeutralPionToken = 5
+
 ||| Ord instance for HadronToken for MultisetTree insertion
 public export
 Ord HadronToken where
-  compare ProtonToken ProtonToken = EQ
-  compare ProtonToken _ = LT
-  compare NeutronToken ProtonToken = GT
-  compare NeutronToken NeutronToken = EQ
+  compare h1 h2 = compare (hadronToNat h1) (hadronToNat h2)
+
 
 ||| Audits O(log N) MultisetTree Transform Application and Tree-Box Equivalence.
 public export

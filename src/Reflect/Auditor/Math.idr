@@ -3,6 +3,8 @@ module Reflect.Auditor.Math
 import public Core.BoxInt
 import public Core.VexelMaxel
 import public Core.Multiset
+import public Core.TransformMultiset
+
 import Data.Vect
 import Data.List
 import Language.Reflection
@@ -43,6 +45,9 @@ import public Math.DiscreteMichaelisMenten
 import public Math.DiscreteMonodWymanChangeux
 import public Math.DiscreteOnsagerReciprocity
 import public Math.DiscretePageCurve
+import public Math.DiscreteHiggsMechanism
+import public Math.DiscreteFeynmanLoop
+
 import public Math.DiscretePlasmaRecombination
 import public Math.DiscretePoyntingTheorem
 import public Math.DiscreteQCDStringTension
@@ -877,6 +882,37 @@ public export
 %macro
 auditNeutrinoOscillation : Elab (Reflect.Auditor.Math.auditNeutrinoOscillationProofExport = True)
 auditNeutrinoOscillation = pure Refl
+
+-- Witness 183: Parallelized O(log N) Transform Multiset Tree Pushforward Evaluation
+public export
+auditParallelPushforwardProofExport : Bool
+auditParallelPushforwardProofExport = Core.TransformMultiset.auditParallelPushforwardProof
+
+public export
+%macro
+auditParallelPushforward : Elab (Reflect.Auditor.Math.auditParallelPushforwardProofExport = True)
+auditParallelPushforward = pure Refl
+
+-- Witness 184: Discrete Higgs Mechanism Potential & Vacuum Stability
+public export
+auditHiggsVacuumStabilityProofExport : Bool
+auditHiggsVacuumStabilityProofExport = Math.DiscreteHiggsMechanism.auditHiggsVacuumStabilityProof
+
+public export
+%macro
+auditHiggsVacuumStability : Elab (Reflect.Auditor.Math.auditHiggsVacuumStabilityProofExport = True)
+auditHiggsVacuumStability = pure Refl
+
+-- Witness 185: 1-Loop Discrete Vacuum Polarization Running Coupling
+public export
+auditDiscreteFeynmanLoopProofExport : Bool
+auditDiscreteFeynmanLoopProofExport = Math.DiscreteFeynmanLoop.auditDiscreteFeynmanLoopProof
+
+public export
+%macro
+auditDiscreteFeynmanLoop : Elab (Reflect.Auditor.Math.auditDiscreteFeynmanLoopProofExport = True)
+auditDiscreteFeynmanLoop = pure Refl
+
 
 -- Witness 182: Muon g-2 Anomaly & Discrete Loop Correction Engine
 public export

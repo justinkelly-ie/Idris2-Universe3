@@ -9,10 +9,63 @@ import Data.List
 %default total
 
 ------------------------------------------------------------------------
--- 1. DISCRETE MULTISET TOKEN CARRIERS ACROSS 4 COSMOLOGICAL SCALES
+-- 1. FULL STANDARD MODEL SUBATOMIC CARRIER TOKENS (SCALE LEVEL 1)
 ------------------------------------------------------------------------
 
-||| Scale Level 1: Subatomic Quark Color Charge Tokens
+||| Standard Model Quark Flavors
+public export
+data QuarkFlavor = UpQuark | DownQuark | StrangeQuark | CharmQuark | BottomQuark | TopQuark
+
+public export
+Eq QuarkFlavor where
+  UpQuark == UpQuark = True
+  DownQuark == DownQuark = True
+  StrangeQuark == StrangeQuark = True
+  CharmQuark == CharmQuark = True
+  BottomQuark == BottomQuark = True
+  TopQuark == TopQuark = True
+  _ == _ = False
+
+||| Standard Model Lepton Flavors
+public export
+data LeptonFlavor = ElectronToken | MuonToken | TauToken | ElectronNeutrinoToken | MuonNeutrinoToken | TauNeutrinoToken
+
+public export
+Eq LeptonFlavor where
+  ElectronToken == ElectronToken = True
+  MuonToken == MuonToken = True
+  TauToken == TauToken = True
+  ElectronNeutrinoToken == ElectronNeutrinoToken = True
+  MuonNeutrinoToken == MuonNeutrinoToken = True
+  TauNeutrinoToken == TauNeutrinoToken = True
+  _ == _ = False
+
+||| Standard Model Gauge & Scalar Bosons
+public export
+data GaugeBoson = PhotonToken | GluonToken | WBosonPlusToken | WBosonMinusToken | ZBosonToken | HiggsBosonToken
+
+public export
+Eq GaugeBoson where
+  PhotonToken == PhotonToken = True
+  GluonToken == GluonToken = True
+  WBosonPlusToken == WBosonPlusToken = True
+  WBosonMinusToken == WBosonMinusToken = True
+  ZBosonToken == ZBosonToken = True
+  HiggsBosonToken == HiggsBosonToken = True
+  _ == _ = False
+
+||| Scale Level 1 Subatomic Particles (Quarks, Leptons, Bosons & Color Charges)
+public export
+data SubatomicParticle = QuarkToken QuarkFlavor | LeptonToken LeptonFlavor | BosonToken GaugeBoson
+
+public export
+Eq SubatomicParticle where
+  (QuarkToken q1) == (QuarkToken q2) = q1 == q2
+  (LeptonToken l1) == (LeptonToken l2) = l1 == l2
+  (BosonToken b1) == (BosonToken b2) = b1 == b2
+  _ == _ = False
+
+||| Legacy Subatomic Color Charge Tokens
 public export
 data ColorCharge = RedColor | GreenColor | BlueColor
 
@@ -23,112 +76,162 @@ Eq ColorCharge where
   BlueColor == BlueColor = True
   _ == _ = False
 
-||| Scale Level 2: Hadronic Nucleon Tokens
+------------------------------------------------------------------------
+-- 2. HADRONIC NUCLEON & MESON TOKENS (SCALE LEVEL 2)
+------------------------------------------------------------------------
+
+||| Scale Level 2: Hadronic Nucleons & Mesons
 public export
-data HadronToken = ProtonToken | NeutronToken
+data HadronToken = ProtonToken | NeutronToken | LambdaBaryonToken | PionPlusToken | PionMinusToken | NeutralPionToken
 
 public export
 Eq HadronToken where
   ProtonToken == ProtonToken = True
   NeutronToken == NeutronToken = True
+  LambdaBaryonToken == LambdaBaryonToken = True
+  PionPlusToken == PionPlusToken = True
+  PionMinusToken == PionMinusToken = True
+  NeutralPionToken == NeutralPionToken = True
   _ == _ = False
 
-||| Scale Level 3: Atomic Element Tokens
+------------------------------------------------------------------------
+-- 3. ATOMIC ELEMENT TOKENS (SCALE LEVEL 3)
+------------------------------------------------------------------------
+
+||| Scale Level 3: Atomic Elements
 public export
-data AtomToken = HydrogenToken | OxygenToken
+data AtomToken = HydrogenToken | HeliumToken | CarbonToken | NitrogenToken | OxygenToken | PhosphorusToken | SulfurToken | IronToken
 
 public export
 Eq AtomToken where
   HydrogenToken == HydrogenToken = True
+  HeliumToken == HeliumToken = True
+  CarbonToken == CarbonToken = True
+  NitrogenToken == NitrogenToken = True
   OxygenToken == OxygenToken = True
+  PhosphorusToken == PhosphorusToken = True
+  SulfurToken == SulfurToken = True
+  IronToken == IronToken = True
   _ == _ = False
 
-||| Scale Level 4: Molecular Species Tokens
+------------------------------------------------------------------------
+-- 4. MOLECULAR SPECIES TOKENS (SCALE LEVEL 4)
+------------------------------------------------------------------------
+
+||| Scale Level 4: Molecular Species & Bioenergetic Compounds
 public export
-data MoleculeToken = WaterMoleculeToken
+data MoleculeToken = WaterMoleculeToken | CarbonDioxideToken | MethaneToken | AmmoniaToken | ATPBioToken
 
 public export
 Eq MoleculeToken where
   WaterMoleculeToken == WaterMoleculeToken = True
+  CarbonDioxideToken == CarbonDioxideToken = True
+  MethaneToken == MethaneToken = True
+  AmmoniaToken == AmmoniaToken = True
+  ATPBioToken == ATPBioToken = True
+  _ == _ = False
 
-||| Scale Level 5: Cellular Biomodule Tokens
+------------------------------------------------------------------------
+-- 5. CELLULAR BIOMODULE TOKENS (SCALE LEVEL 5)
+------------------------------------------------------------------------
+
+||| Scale Level 5: Macromolecular Nucleotides & Cellular Biomodules
 public export
-data BiomoduleToken = HydratedCellToken
+data BiomoduleToken = AdenineToken | ThymineToken | GuanineToken | CytosineToken | HydratedCellToken
 
 public export
 Eq BiomoduleToken where
+  AdenineToken == AdenineToken = True
+  ThymineToken == ThymineToken = True
+  GuanineToken == GuanineToken = True
+  CytosineToken == CytosineToken = True
   HydratedCellToken == HydratedCellToken = True
+  _ == _ = False
 
 ------------------------------------------------------------------------
--- 2. INDIVIDUAL SCALE TRANSFORMS (T1, T2, T3, T4)
+-- 6. INDIVIDUAL SCALE TRANSFORMS (T1, T2, T3, T4)
 ------------------------------------------------------------------------
 
 ||| T1: Quark Color Charges -> Hadron Nucleon Tokens
 public export
-t1_QuarkToHadron : TransformMultiset ColorCharge HadronToken
-t1_QuarkToHadron = mkTransformBox EllipticSector (mkUnixelFraction (intToBoxInt 1) 27)
+t1_QuarkToHadron : MaxelTransform ColorCharge HadronToken
+t1_QuarkToHadron = mkMaxelTransform EllipticSector (mkUnixelFraction (intToBoxInt 1) 27)
   [ ((RedColor, ProtonToken), intToBoxInt 1)
   , ((GreenColor, ProtonToken), intToBoxInt 1)
   , ((BlueColor, ProtonToken), intToBoxInt 1)
   ]
 
+||| T1_Full: Full Subatomic Particles (Quarks, Leptons) -> Hadron & Atomic Tokens
+public export
+t1_SubatomicToHadron : MaxelTransform SubatomicParticle HadronToken
+t1_SubatomicToHadron = mkMaxelTransform EllipticSector (mkUnixelFraction (intToBoxInt 1) 27)
+  [ ((QuarkToken UpQuark, ProtonToken), intToBoxInt 2)
+  , ((QuarkToken DownQuark, ProtonToken), intToBoxInt 1)
+  , ((QuarkToken UpQuark, NeutronToken), intToBoxInt 1)
+  , ((QuarkToken DownQuark, NeutronToken), intToBoxInt 2)
+  ]
+
 ||| T2: Hadron Nucleon Tokens -> Atomic Element Tokens
 public export
-t2_HadronToAtom : TransformMultiset HadronToken AtomToken
-t2_HadronToAtom = mkTransformBox EllipticSector (mkUnixelFraction (intToBoxInt 1) 1)
+t2_HadronToAtom : MaxelTransform HadronToken AtomToken
+t2_HadronToAtom = mkMaxelTransform EllipticSector (mkUnixelFraction (intToBoxInt 1) 1)
   [ ((ProtonToken, HydrogenToken), intToBoxInt 1)
   , ((NeutronToken, OxygenToken), intToBoxInt 1)
+  , ((ProtonToken, HeliumToken), intToBoxInt 2)
+  , ((NeutronToken, HeliumToken), intToBoxInt 2)
   ]
 
 ||| T3: Atomic Element Tokens -> Molecular Species Tokens
 public export
-t3_AtomToMolecule : TransformMultiset AtomToken MoleculeToken
-t3_AtomToMolecule = mkTransformBox EllipticSector (mkUnixelFraction (intToBoxInt 1) 1)
+t3_AtomToMolecule : MaxelTransform AtomToken MoleculeToken
+t3_AtomToMolecule = mkMaxelTransform EllipticSector (mkUnixelFraction (intToBoxInt 1) 1)
   [ ((HydrogenToken, WaterMoleculeToken), intToBoxInt 1)
   , ((OxygenToken, WaterMoleculeToken), intToBoxInt 1)
+  , ((CarbonToken, CarbonDioxideToken), intToBoxInt 1)
+  , ((OxygenToken, CarbonDioxideToken), intToBoxInt 2)
   ]
 
 ||| T4: Molecular Species Tokens -> Cellular Biomodule Tokens
 public export
-t4_MoleculeToBiomodule : TransformMultiset MoleculeToken BiomoduleToken
-t4_MoleculeToBiomodule = mkTransformBox EllipticSector (mkUnixelFraction (intToBoxInt 1) 1)
+t4_MoleculeToBiomodule : MaxelTransform MoleculeToken BiomoduleToken
+t4_MoleculeToBiomodule = mkMaxelTransform EllipticSector (mkUnixelFraction (intToBoxInt 1) 1)
   [ ((WaterMoleculeToken, HydratedCellToken), intToBoxInt 1)
+  , ((ATPBioToken, HydratedCellToken), intToBoxInt 1)
   ]
 
 ------------------------------------------------------------------------
--- 3. MONOIDAL TRANSFORM COMPOSITION (T_total = T4 ∘ T3 ∘ T2 ∘ T1)
+-- 7. MONOIDAL TRANSFORM COMPOSITION (T_total = T4 ∘ T3 ∘ T2 ∘ T1)
 ------------------------------------------------------------------------
 
 ||| Intermediate T12 = T2 ∘ T1: Quarks -> Atoms
 public export
-t12_QuarkToAtom : TransformMultiset ColorCharge AtomToken
-t12_QuarkToAtom = composeTransforms t1_QuarkToHadron t2_HadronToAtom
+t12_QuarkToAtom : MaxelTransform ColorCharge AtomToken
+t12_QuarkToAtom = composeMaxels t1_QuarkToHadron t2_HadronToAtom
 
 ||| Intermediate T123 = T3 ∘ T12: Quarks -> Molecules
 public export
-t123_QuarkToMolecule : TransformMultiset ColorCharge MoleculeToken
-t123_QuarkToMolecule = composeTransforms t12_QuarkToAtom t3_AtomToMolecule
+t123_QuarkToMolecule : MaxelTransform ColorCharge MoleculeToken
+t123_QuarkToMolecule = composeMaxels t12_QuarkToAtom t3_AtomToMolecule
 
 ||| Composite End-to-End Scale Pipeline Transform T_total = T4 ∘ T3 ∘ T2 ∘ T1: Quarks -> Biomodules
 public export
-tTotalFunctorialPipeline : TransformMultiset ColorCharge BiomoduleToken
-tTotalFunctorialPipeline = composeTransforms t123_QuarkToMolecule t4_MoleculeToBiomodule
+tTotalFunctorialPipeline : MaxelTransform ColorCharge BiomoduleToken
+tTotalFunctorialPipeline = composeMaxels t123_QuarkToMolecule t4_MoleculeToBiomodule
 
 ------------------------------------------------------------------------
--- 4. PIPELINE APPLICATION OPERATOR
+-- 8. PIPELINE APPLICATION OPERATOR & INVARIANT AUDIT
 ------------------------------------------------------------------------
 
-||| Applies the 4-stage consolidated Functorial Pipeline in a single pushforward contraction.
+||| Applies the 4-stage consolidated Scale Pipeline in a single pushforward contraction.
 public export
 applyHierarchicalPipelineContraction : Box ColorCharge -> Box BiomoduleToken
 applyHierarchicalPipelineContraction sourceQuarks =
-  applyPushforwardContraction tTotalFunctorialPipeline sourceQuarks
+  applyPushforward tTotalFunctorialPipeline sourceQuarks
 
-------------------------------------------------------------------------
--- 5. COMPILE-TIME MACRO REFLECTION INVARIANT AUDIT
-------------------------------------------------------------------------
-
-||| Audits that 9 source quark tokens (3 Red, 3 Green, 3 Blue) contract through T_total directly to 9 HydratedCell tokens.
+||| Audits that 9 source quark tokens contract through T_total directly to 9 HydratedCell tokens.
 public export
 auditFunctorialPipelineProof : Bool
-auditFunctorialPipelineProof = True
+auditFunctorialPipelineProof =
+  let source : Box ColorCharge = insertBox RedColor (intToBoxInt 3) (insertBox GreenColor (intToBoxInt 3) (insertBox BlueColor (intToBoxInt 3) emptyBox))
+      result = applyHierarchicalPipelineContraction source
+  in lookupBox HydratedCellToken result == intToBoxInt 9

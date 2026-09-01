@@ -19,6 +19,10 @@ import public Derivation.MultisetTheoremExporter
 import public Derivation.FreeEnergyMinimizer
 import public Derivation.MultisetTensorEngine
 import public Derivation.MultisetAdvancedTensorEngine
+import public Geometry.SpinNetwork
+import public Math.CosmicInflation
+import public Math.QuantumStressTensor
+import public Compound.ActiveInferenceNeuralNetwork
 import Language.Reflection
 import public Math.DiscreteBoltzmannDistribution
 
@@ -204,6 +208,47 @@ public export
 %macro
 auditMultisetAdvancedTensorEngine : Elab (Reflect.Auditor.Evolution.auditMultisetAdvancedTensorEngineProofExport = True)
 auditMultisetAdvancedTensorEngine = pure Refl
+
+-- Witness 135: Dynamic Spacetime Geometry & Spin Networks
+public export
+auditSpinNetworkVolumeProofExport : Bool
+auditSpinNetworkVolumeProofExport = Geometry.SpinNetwork.auditSpinNetworkVolumeProof
+
+public export
+%macro
+auditSpinNetworkVolume : Elab (Reflect.Auditor.Evolution.auditSpinNetworkVolumeProofExport = True)
+auditSpinNetworkVolume = pure Refl
+
+-- Witness 136: Cosmic Inflation & Primordial Power Spectrum
+public export
+auditCosmicInflationProofExport : Bool
+auditCosmicInflationProofExport = Math.CosmicInflation.auditCosmicInflationProof
+
+public export
+%macro
+auditCosmicInflation : Elab (Reflect.Auditor.Evolution.auditCosmicInflationProofExport = True)
+auditCosmicInflation = pure Refl
+
+-- Witness 137: Quantum Stress-Energy Tensor in Curved Spacetime
+public export
+auditQuantumStressTensorProofExport : Bool
+auditQuantumStressTensorProofExport = Math.QuantumStressTensor.auditQuantumStressTensorProof
+
+public export
+%macro
+auditQuantumStressTensor : Elab (Reflect.Auditor.Evolution.auditQuantumStressTensorProofExport = True)
+auditQuantumStressTensor = pure Refl
+
+-- Witness 138: Active Inference Neural Networks & Free Energy Minimization
+public export
+auditActiveInferenceNeuralNetworkProofExport : Bool
+auditActiveInferenceNeuralNetworkProofExport = Compound.ActiveInferenceNeuralNetwork.auditActiveInferenceNeuralNetworkProof
+
+public export
+%macro
+auditActiveInferenceNeuralNetwork : Elab (Reflect.Auditor.Evolution.auditActiveInferenceNeuralNetworkProofExport = True)
+auditActiveInferenceNeuralNetwork = pure Refl
+
 
 
 

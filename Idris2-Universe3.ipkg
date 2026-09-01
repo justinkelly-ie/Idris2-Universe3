@@ -27,7 +27,10 @@ modules = Core.BoxInt
         , Math.Infinitesimal
         , Math.RationalTrig
         , Math.LawAlgebra
+        , Math.CosmicInflation
+        , Math.QuantumStressTensor
         , Geometry.GaloisCurvature
+        , Geometry.SpinNetwork
         , Derivation.PureGeometricClassifier
         , Derivation.FunctorialScalePipeline
         , Derivation.ReverseCausalReconstruction

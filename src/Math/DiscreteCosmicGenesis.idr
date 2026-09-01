@@ -8,7 +8,7 @@ import Math.LinAlgebra.MetricTensor
 import Math.FourGeometries
 import Math.ConstructiveBaryogenesis
 import Math.DiscreteLandauerPrinciple
-import Math.HelmholtzFreeEnergy
+import Math.FineStructure
 import Data.List
 import Data.Nat
 
@@ -33,7 +33,10 @@ record GenesisState where
 
 public export
 genesisVacuum : GenesisState
-genesisVacuum = MkGenesisState (intToBoxInt 0) 128 55 210
+genesisVacuum = MkGenesisState (intToBoxInt 0)
+                               (cast (unwrapBox darkEnergyROM))
+                               (cast (unwrapBox darkMatterResidueEpoch37))
+                               (cast (unwrapBox primorial4))
 
 ||| Audits the Primordial Genesis Budget Partition: 0 + 128 + 55 == 183 <= 210,
 ||| with full capacity allocated as 27 (VM Basis) + 128 (DE ROM) + 55 (DM Sink) = 210.
@@ -41,10 +44,10 @@ public export
 isValidGenesisPartition : GenesisState -> Bool
 isValidGenesisPartition (MkGenesisState vm de dm tot) =
   unwrapBox vm == 0 &&
-  de == 128 &&
-  dm == 55 &&
-  (27 + de + dm == tot) &&
-  tot == 210
+  de == cast (unwrapBox darkEnergyROM) &&
+  dm == cast (unwrapBox darkMatterResidueEpoch37) &&
+  (cast (unwrapBox visibleMatterCapacity) + de + dm == tot) &&
+  tot == cast (unwrapBox primorial4)
 
 ------------------------------------------------------------------------
 -- 2. ANTIMATTER PAIR ANNIHILATION & RELIC ASYMMETRY FREEZE-OUT
