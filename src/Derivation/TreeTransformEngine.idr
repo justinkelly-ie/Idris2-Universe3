@@ -72,9 +72,18 @@ hadronToNat : HadronToken -> Nat
 hadronToNat ProtonToken = 0
 hadronToNat NeutronToken = 1
 hadronToNat LambdaBaryonToken = 2
-hadronToNat PionPlusToken = 3
-hadronToNat PionMinusToken = 4
-hadronToNat NeutralPionToken = 5
+hadronToNat SigmaBaryonToken = 3
+hadronToNat XiBaryonToken = 4
+hadronToNat OmegaBaryonToken = 5
+hadronToNat PionPlusToken = 6
+hadronToNat PionMinusToken = 7
+hadronToNat NeutralPionToken = 8
+hadronToNat KaonPlusToken = 9
+hadronToNat KaonMinusToken = 10
+hadronToNat NeutralKaonToken = 11
+hadronToNat RhoMesonToken = 12
+hadronToNat JPsiMesonToken = 13
+hadronToNat UpsilonMesonToken = 14
 
 ||| Ord instance for HadronToken for MultisetTree insertion
 public export

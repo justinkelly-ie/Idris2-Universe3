@@ -40,14 +40,26 @@ Eq LeptonFlavor where
   TauNeutrinoToken == TauNeutrinoToken = True
   _ == _ = False
 
-||| Standard Model Gauge & Scalar Bosons
+||| Standard Model Gauge & Scalar Bosons including 8 SU(3) Gell-Mann Gluon Octet States
 public export
-data GaugeBoson = PhotonToken | GluonToken | WBosonPlusToken | WBosonMinusToken | ZBosonToken | HiggsBosonToken
+data GaugeBoson = PhotonToken 
+                | GluonToken 
+                | GluonOctet1 | GluonOctet2 | GluonOctet3 | GluonOctet4 
+                | GluonOctet5 | GluonOctet6 | GluonOctet7 | GluonOctet8
+                | WBosonPlusToken | WBosonMinusToken | ZBosonToken | HiggsBosonToken
 
 public export
 Eq GaugeBoson where
   PhotonToken == PhotonToken = True
   GluonToken == GluonToken = True
+  GluonOctet1 == GluonOctet1 = True
+  GluonOctet2 == GluonOctet2 = True
+  GluonOctet3 == GluonOctet3 = True
+  GluonOctet4 == GluonOctet4 = True
+  GluonOctet5 == GluonOctet5 = True
+  GluonOctet6 == GluonOctet6 = True
+  GluonOctet7 == GluonOctet7 = True
+  GluonOctet8 == GluonOctet8 = True
   WBosonPlusToken == WBosonPlusToken = True
   WBosonMinusToken == WBosonMinusToken = True
   ZBosonToken == ZBosonToken = True
@@ -80,18 +92,41 @@ Eq ColorCharge where
 -- 2. HADRONIC NUCLEON & MESON TOKENS (SCALE LEVEL 2)
 ------------------------------------------------------------------------
 
-||| Scale Level 2: Hadronic Nucleons & Mesons
+||| Scale Level 2: Hadronic Nucleons, Hyperons, Mesons & Vector Resonances
 public export
-data HadronToken = ProtonToken | NeutronToken | LambdaBaryonToken | PionPlusToken | PionMinusToken | NeutralPionToken
+data HadronToken = ProtonToken 
+                 | NeutronToken 
+                 | LambdaBaryonToken 
+                 | SigmaBaryonToken 
+                 | XiBaryonToken 
+                 | OmegaBaryonToken
+                 | PionPlusToken 
+                 | PionMinusToken 
+                 | NeutralPionToken
+                 | KaonPlusToken
+                 | KaonMinusToken
+                 | NeutralKaonToken
+                 | RhoMesonToken
+                 | JPsiMesonToken
+                 | UpsilonMesonToken
 
 public export
 Eq HadronToken where
   ProtonToken == ProtonToken = True
   NeutronToken == NeutronToken = True
   LambdaBaryonToken == LambdaBaryonToken = True
+  SigmaBaryonToken == SigmaBaryonToken = True
+  XiBaryonToken == XiBaryonToken = True
+  OmegaBaryonToken == OmegaBaryonToken = True
   PionPlusToken == PionPlusToken = True
   PionMinusToken == PionMinusToken = True
   NeutralPionToken == NeutralPionToken = True
+  KaonPlusToken == KaonPlusToken = True
+  KaonMinusToken == KaonMinusToken = True
+  NeutralKaonToken == NeutralKaonToken = True
+  RhoMesonToken == RhoMesonToken = True
+  JPsiMesonToken == JPsiMesonToken = True
+  UpsilonMesonToken == UpsilonMesonToken = True
   _ == _ = False
 
 ------------------------------------------------------------------------
