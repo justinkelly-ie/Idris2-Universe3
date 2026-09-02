@@ -1,45 +1,44 @@
-# 🌌 Idris2-Universe3
+# 🌌 Idris2-Universe
 
-**10D Substrate Metric, State Evolution & Reflection Auditor for Idris 2**
+**Layer 6 Master Cosmological Engine, QTT State Machine & Reflection Auditor for Idris 2**
 
-`Idris2-Universe3` is the core physical engine unifying all metric sectors:
-- **Strict QTT Linearity**: State evolution enforcing linear multiplicity `(1 state : UniverseState vm de dm)`.
-- **Discrete Helmholtz Free Energy Minimization**: Unique global ground state minimum $F = -1320$ at Primorial $210$.
-- **163 Reflection Proof Auditors**: Compile-time macro reflection invariants (`%macro`).
-- **Norman Wildberger Finitist Foundation**: Built on Wildberger's Box Arithmetic, Rational Trigonometry, Chromogeometry, and Dyck path combinatorics.
+`Idris2-Universe` unifies all lower physical, geometric, chemical, and biological layers into a single QTT linear cosmological engine.
 
 ---
 
-## 📐 Mathematical & Physical Foundations
+## Key Features & Invariants
 
-### 1. Norman Wildberger's Box Arithmetic
-Rather than relying on continuous real manifolds ($\mathbb{R}^n$) and uncountable infinities, state space is built constructivally from discrete integer multisets (**Pixel Boxes**):
-$$\text{[]}=0, \quad \text{[[]]}=1, \quad \text{[[] []]}=2, \quad \text{[[] [] []]}=3, \dots$$
-Geometric separation is computed strictly using rational **Quadrance** ($Q = \Delta x^2 + \Delta y^2$) and **Spread** ($S$), eliminating trigonometric approximations.
-
-### 2. Canonical Dyck Contour Walks
-Every nested `BoxSpec` multiset configuration maps bijectively to a canonical non-negative Dyck contour walk ($+1$ up-step for open brackets/descent into a sub-box, $-1$ down-step for close brackets/ascent out of a sub-box):
-- **Serialization**: Encoded via `contourWalk` into prefix-free bitstrings and validated total via `isDyckPath`.
-- **Narayana Refinement**: Narayana numbers $N(n, k)$ index Dyck paths by peak count $k$, partitioning state capacity across the 4 metric sectors:
-  - **Elliptic** ($\det g = +1$, 27 Bound-State VM)
-  - **Hyperbolic** ($\det g = -1$, 128 Gauge-Flux DE)
-  - **Parabolic** ($\det g = 0$, 55 Dissipation DM)
-  - **Substrate** ($g_{22} = 0, g_{12} = 1$, Primorial 210 Ground State)
-- **Holographic Bound & Evaporation**: Serves as the prefix-free boundary bitstream for Law 13 (Holographic Area Bound) and Law 21 (Unitary Hawking Radiation Page Curve Stream).
+- **Strict QTT Linearity**: Enforces linear state evolution `(1 state : UniverseState vm de dm)` preventing state duplication or token leaks.
+- **Primorial 210 Budget**: Partitioned into 27 Vexel Matter (Elliptic), 128 Dark Energy (Hyperbolic), 55 Dark Matter (Parabolic), achieving unique global free energy minimum $F = -1320$.
+- **Compile-Time Elaborator Reflection**: Invariant audits verified at compile time via `%macro` reflection tactics.
+- **Norman Wildberger Finitist Foundation**: Built on Rational Trigonometry, Chromogeometry, Box Arithmetic, and Dyck path combinatorics.
 
 ---
 
-## 🚀 Building & Installing
+## Integrated Layer Stack
 
-Built with Idris 2 (`0.8.0`):
+`Idris2-Universe` unifies the following layer stack:
+
+1. **`Idris2-Multiset-Core`** (Ground QTT Memory Kernel)
+2. **`Idris2-Multiset-Transform`** (2-Category Tensor Transforms)
+3. **`Idris2-Multiset-Binary`** (Binary State Logic $\mathbb{F}_2$)
+4. **`Idris2-Multiset-Ternary`** (Balanced Ternary Geometry $\mathbb{F}_3$)
+5. **`Idris2-Geometry`** (4-Metric Spacetime Geometry)
+6. **`Idris2-Physics`** (69 Fundamental Physical Laws)
+7. **`Idris2-Hadron`** (Quark-Hadron-Meson Confinement)
+8. **`Idris2-Chemistry`** (Molecular Bonding, Solvation, Base Pairing)
+9. **`Idris2-Biology`** (Kinetics, Action Potentials, Ribosomal Translation, Neural Networks)
+
+---
+
+## Building & Usage
+
+Build the package using `pack`:
 
 ```bash
-idris2 --build Idris2-Universe3.ipkg
-idris2 --install Idris2-Universe3.ipkg
+pack build Idris2-Universe.ipkg
 ```
 
 ---
 
-## 🔬 Language & Framework Integration
-
-Written in **Idris 2** enforcing total constructivism (`%default total`).
+&copy; Justin Kelly. Formalized in pair-programming collaboration with Google Antigravity.
