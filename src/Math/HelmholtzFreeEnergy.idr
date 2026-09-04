@@ -6,7 +6,7 @@ import Core.VexelMaxel
 import Core.UnixelFraction
 import Core.Polynumber
 import Math.FourGeometries
-import Math.DiscreteBoltzmannDistribution
+import Math.ThermalDistribution
 import Math.FineStructure
 import Data.List
 

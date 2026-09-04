@@ -4,6 +4,7 @@ import Core.BoxInt
 import Core.VexelMaxel
 import Core.UnixelFraction
 import Math.FourGeometries
+import Math.ActionPrinciple
 import Data.List
 
 %default total
@@ -143,10 +144,10 @@ Eq RationalOrbit where
   (MkRationalOrbit a1 c1 t1) == (MkRationalOrbit a2 c2 t2) =
     a1 == a2 && c1 == c2 && t1 == t2
 
-||| Evaluates the Rational Eccentricity Spread s_e = Q_c / Q_a = (c/a)^2 as a (num, den) pair.
+||| Evaluates the Rational Eccentricity Spread s_e = Q_c / Q_a = (c/a)^2 as an exact UnixelFraction.
 public export
-orbitalEccentricitySpread : RationalOrbit -> (BoxInt, BoxInt)
-orbitalEccentricitySpread (MkRationalOrbit qa qc _) = (qc, qa)
+orbitalEccentricitySpread : RationalOrbit -> UnixelFraction
+orbitalEccentricitySpread (MkRationalOrbit qa qc _) = mkUnixelFraction qc (boxToNat qa)
 
 ||| Evaluates the Semi-Minor Quadrance Q_b = Q_a - Q_c = Q_a * (1 - s_e).
 public export
@@ -157,8 +158,8 @@ orbitalMinorQuadrance (MkRationalOrbit qa qc _) = qa - qc
 ||| between r1 = (x1, y1) and r2 = (x2, y2):
 ||| Quadrea = 4 * (x1 * y2 - x2 * y1)^2 = 4 * L_z^2.
 public export
-sweptQuadrea : (r1 : (BoxInt, BoxInt)) -> (r2 : (BoxInt, BoxInt)) -> BoxInt
-sweptQuadrea (x1, y1) (x2, y2) =
+sweptQuadrea : (r1 : Coord2D) -> (r2 : Coord2D) -> BoxInt
+sweptQuadrea (MkCoord2D x1 y1) (MkCoord2D x2 y2) =
   let crossLz = (x1 * y2) - (x2 * y1)
   in intToBoxInt 4 * (crossLz * crossLz)
 
@@ -172,7 +173,7 @@ keplerHarmonicRatio (MkRationalOrbit qa _ t) =
 
 ||| Audits the Rational Kepler Laws:
 ||| 1. 1st Law (Eccentricity Spread & Minor Quadrance):
-|||    Q_a = 100, Q_c = 19 => s_e = (19, 100), Q_b = 81.
+|||    Q_a = 100, Q_c = 19 => s_e = 19 / 100, Q_b = 81.
 ||| 2. 2nd Law (Constant Swept Quadrea):
 |||    For angular momentum L_z = x1*y2 - x2*y1 = 6, swept Quadrea = 4 * 6^2 = 144.
 ||| 3. 3rd Law (Quadrance Harmonic Law):
@@ -181,12 +182,12 @@ public export
 auditRationalKeplerLawsProof : Bool
 auditRationalKeplerLawsProof =
   let orb1 = MkRationalOrbit (intToBoxInt 100) (intToBoxInt 19) (intToBoxInt 1000)
-      (numSe, denSe) = orbitalEccentricitySpread orb1
+      spread1 = orbitalEccentricitySpread orb1
       qb = orbitalMinorQuadrance orb1
-      ok1 = numSe == intToBoxInt 19 && denSe == intToBoxInt 100 && qb == intToBoxInt 81
+      ok1 = spread1 == mkUnixelFraction (intToBoxInt 19) 100 && qb == intToBoxInt 81
 
-      rA = (intToBoxInt 3, intToBoxInt 0)
-      rB = (intToBoxInt 2, intToBoxInt 2)
+      rA = MkCoord2D (intToBoxInt 3) (intToBoxInt 0)
+      rB = MkCoord2D (intToBoxInt 2) (intToBoxInt 2)
       -- L_z = 3*2 - 0*2 = 6 => Quadrea = 4 * 36 = 144
       aQuad = sweptQuadrea rA rB
       ok2 = aQuad == intToBoxInt 144

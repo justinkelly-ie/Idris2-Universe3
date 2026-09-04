@@ -3,7 +3,7 @@ module Math.NeutrinoOscillation
 import Core.BoxInt
 import Core.UnixelFraction
 import Core.Multiset
-import Math.DiscreteFlavorMixing
+import Math.FlavorMixing
 import Data.Vect
 import Data.List
 

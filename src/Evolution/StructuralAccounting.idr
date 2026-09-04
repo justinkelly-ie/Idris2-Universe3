@@ -3,7 +3,7 @@ module Evolution.StructuralAccounting
 import Core.BoxInt
 import Core.VexelMaxel
 import Evolution.State
-import Math.DiscreteLandauerPrinciple
+import Math.InformationErasureCost
 import Data.Vect
 
 %default total

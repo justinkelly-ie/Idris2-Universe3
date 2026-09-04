@@ -27,13 +27,15 @@ auditRowExtraction = pure Refl
 
 -- Witness 7: Unixel Denominator Positivity
 public export
-auditSingFractionPositivityProofExport : Bool
-auditSingFractionPositivityProofExport = Core.UnixelFraction.auditSternBrocotProof
+auditUnixelFractionPositivityProofExport : Bool
+auditUnixelFractionPositivityProofExport = Core.UnixelFraction.auditSternBrocotProof
 
 public export
 %macro
-auditSingFractionPositivity : Elab (Reflect.Auditor.Core.auditSingFractionPositivityProofExport = True)
-auditSingFractionPositivity = pure Refl
+auditUnixelFractionPositivity : Elab (Reflect.Auditor.Core.auditUnixelFractionPositivityProofExport = True)
+auditUnixelFractionPositivity = pure Refl
+
+
 
 -- Witness 8: Rational Equivalence
 public export

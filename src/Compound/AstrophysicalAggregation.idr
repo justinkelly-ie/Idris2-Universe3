@@ -5,8 +5,8 @@ import Core.Multiset
 import Core.UnixelFraction
 import Core.TransformMultiset
 import Math.LawAlgebra
-import Math.DiscreteChandrasekharLimit
-import Math.DiscreteTOVLimit
+import Math.DegeneracyMassLimit
+import Math.GravitationalCollapseLimit
 import Data.List
 
 %default total

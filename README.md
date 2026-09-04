@@ -36,7 +36,8 @@
 Build the package using `pack`:
 
 ```bash
-pack build Idris2-Universe.ipkg
+idris2 --build Idris2-Universe.ipkg
+idris2 --install Idris2-Universe.ipkg
 ```
 
 ---

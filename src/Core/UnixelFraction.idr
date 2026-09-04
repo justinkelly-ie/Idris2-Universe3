@@ -117,13 +117,18 @@ boxToNat (MkBoxInt v) =
 
 ||| Inversion / Division: (n1/d1) / (n2/d2) where n2 != 0.
 public export
-divSingFraction : UnixelFraction -> UnixelFraction -> UnixelFraction
-divSingFraction (MkUnixelFraction n1 (MkUnixel d1)) (MkUnixelFraction n2 (MkUnixel d2)) =
+divUnixelFraction : UnixelFraction -> UnixelFraction -> UnixelFraction
+divUnixelFraction (MkUnixelFraction n1 (MkUnixel d1)) (MkUnixelFraction n2 (MkUnixel d2)) =
   let d2Int = natToBoxInt d2
       newNum = n1 * d2Int
       dDenom = let d = boxToNat n2 in if d == 0 then 1 else d
       signAdj = if unwrapBox n2 < 0 then -1 else 1
   in mkUnixelFraction (newNum * intToBoxInt signAdj) (d1 * dDenom)
+
+||| Deprecated alias for divUnixelFraction. Use divUnixelFraction directly.
+public export
+divSingFraction : UnixelFraction -> UnixelFraction -> UnixelFraction
+divSingFraction = divUnixelFraction
 
 ||| Rational Equality via cross-multiplication: n1 * d2 == n2 * d1
 public export
@@ -142,21 +147,36 @@ Show UnixelFraction where
 ||| Pure linear consumption of a UnixelFraction token.
 ||| Guarantees exactly one usage with zero leakage.
 public export
+linearConsumeUnixelFraction : (1 frac : UnixelFraction) -> UnixelFraction
+linearConsumeUnixelFraction (MkUnixelFraction n d) = MkUnixelFraction n d
+
+||| Deprecated alias for linearConsumeUnixelFraction.
+public export
 linearConsumeSingFraction : (1 frac : UnixelFraction) -> UnixelFraction
-linearConsumeSingFraction (MkUnixelFraction n d) = MkUnixelFraction n d
+linearConsumeSingFraction = linearConsumeUnixelFraction
 
 ||| Linear scaling of a fractional multiset by a linear BoxInt factor.
 public export
-linearScaleSingFraction : (1 frac : UnixelFraction) -> (1 scale : BoxInt) -> UnixelFraction
-linearScaleSingFraction (MkUnixelFraction (MkBoxInt n) d) (MkBoxInt s) =
+linearScaleUnixelFraction : (1 frac : UnixelFraction) -> (1 scale : BoxInt) -> UnixelFraction
+linearScaleUnixelFraction (MkUnixelFraction (MkBoxInt n) d) (MkBoxInt s) =
   MkUnixelFraction (MkBoxInt (s * n)) d
+
+||| Deprecated alias for linearScaleUnixelFraction.
+public export
+linearScaleSingFraction : (1 frac : UnixelFraction) -> (1 scale : BoxInt) -> UnixelFraction
+linearScaleSingFraction = linearScaleUnixelFraction
 
 ||| Linearly split a UnixelFraction into two parts according to an integer partition p.
 ||| Conserves total numerator energy: p + (n - p) == n.
 public export
-linearSplitSingFraction : (1 frac : UnixelFraction) -> (p : BoxInt) -> (UnixelFraction, UnixelFraction)
-linearSplitSingFraction (MkUnixelFraction (MkBoxInt n) d) (MkBoxInt p) =
+linearSplitUnixelFraction : (1 frac : UnixelFraction) -> (p : BoxInt) -> (UnixelFraction, UnixelFraction)
+linearSplitUnixelFraction (MkUnixelFraction (MkBoxInt n) d) (MkBoxInt p) =
   (MkUnixelFraction (MkBoxInt p) d, MkUnixelFraction (MkBoxInt (n - p)) d)
+
+||| Deprecated alias for linearSplitUnixelFraction.
+public export
+linearSplitSingFraction : (1 frac : UnixelFraction) -> (p : BoxInt) -> (UnixelFraction, UnixelFraction)
+linearSplitSingFraction = linearSplitUnixelFraction
 
 ------------------------------------------------------------------------
 -- 4. CONTINUED FRACTIONS & OPTIMAL RATIONAL CONVERGENTS
@@ -190,7 +210,7 @@ fromContinuedFraction [] = zeroUnixelFraction
 fromContinuedFraction [a] = mkUnixelFraction a 1
 fromContinuedFraction (a :: rest) =
   let restFrac = fromContinuedFraction rest
-      oneOverRest = divSingFraction unitUnixelFraction restFrac
+      oneOverRest = divUnixelFraction unitUnixelFraction restFrac
       aFrac = mkUnixelFraction a 1
   in addUnixelFraction aFrac oneOverRest
 
@@ -223,12 +243,17 @@ Show SternBrocotBranch where
 
 ||| Computes the mediant between two rational bounds: (p1 + p2) / (q1 + q2).
 public export
-mediantSingFraction : UnixelFraction -> UnixelFraction -> UnixelFraction
-mediantSingFraction (MkUnixelFraction (MkBoxInt n1) (MkUnixel d1))
-                    (MkUnixelFraction (MkBoxInt n2) (MkUnixel d2)) =
+mediantUnixelFraction : UnixelFraction -> UnixelFraction -> UnixelFraction
+mediantUnixelFraction (MkUnixelFraction (MkBoxInt n1) (MkUnixel d1))
+                      (MkUnixelFraction (MkBoxInt n2) (MkUnixel d2)) =
   let newNum = MkBoxInt (n1 + n2)
       newDen = d1 + d2
   in mkUnixelFraction newNum newDen
+
+||| Deprecated alias for mediantUnixelFraction. Use mediantUnixelFraction directly.
+public export
+mediantSingFraction : UnixelFraction -> UnixelFraction -> UnixelFraction
+mediantSingFraction = mediantUnixelFraction
 
 ||| Converts an exact UnixelFraction to a Stern-Brocot binary path of branch directions.
 ||| Uses explicit fuel to guarantee total constructivist termination.
@@ -241,7 +266,7 @@ toSternBrocotPath fuel target =
     helper : Nat -> UnixelFraction -> UnixelFraction -> UnixelFraction -> List SternBrocotBranch
     helper Z _ _ _ = []
     helper (S f) l r q =
-      let m = mediantSingFraction l r
+      let m = mediantUnixelFraction l r
           (MkUnixelFraction nq (MkUnixel dq)) = q
           (MkUnixelFraction nm (MkUnixel dm)) = m
           crossDiff = (nq * natToBoxInt dm) - (nm * natToBoxInt dq)
@@ -259,12 +284,12 @@ fromSternBrocotPath path =
   helper path zeroUnixelFraction (MkUnixelFraction (intToBoxInt 1) (MkUnixel 0))
   where
     helper : List SternBrocotBranch -> UnixelFraction -> UnixelFraction -> UnixelFraction
-    helper [] l r = mediantSingFraction l r
+    helper [] l r = mediantUnixelFraction l r
     helper (BranchL :: rest) l r =
-      let m = mediantSingFraction l r
+      let m = mediantUnixelFraction l r
       in helper rest l m
     helper (BranchR :: rest) l r =
-      let m = mediantSingFraction l r
+      let m = mediantUnixelFraction l r
       in helper rest m r
 
 ||| Audits that Stern-Brocot path encoding for 5/3 is [R, L, R] and reconstructs to 5/3.

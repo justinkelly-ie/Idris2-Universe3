@@ -3,7 +3,7 @@ module Math.GaugeSpinorCoupling
 import Core.BoxInt
 import Core.VexelMaxel
 import Core.UnixelFraction
-import Math.DiscreteDiracSpinor
+import Math.RelativisticSpinor
 import Math.GravitationalWaveDynamics
 import Math.FourGeometries
 import Data.List

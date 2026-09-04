@@ -5,8 +5,8 @@ import public Derivation.PureGeometricClassifier
 import public Geometry.InformationGeometry
 import public Geometry.GaloisCurvature
 import Language.Reflection
-import public Math.DiscreteLatticeBoltzmann
-import public Math.PauliExclusion
+import public Math.LatticeFluidTransport
+import public Math.ExclusionPrinciple
 
 %default total
 
@@ -77,7 +77,7 @@ auditCosmologicalInferences = pure Refl
 -- Witness 64: Grassmann Blade Nilpotency (Law 9)
 public export
 auditGrassmannNilpotencyProofExport : Bool
-auditGrassmannNilpotencyProofExport = Math.PauliExclusion.auditGrassmannNilpotencyProof
+auditGrassmannNilpotencyProofExport = Math.ExclusionPrinciple.auditGrassmannNilpotencyProof
 
 public export
 %macro
@@ -126,13 +126,13 @@ auditAmariPythagoreanTheorem = pure Refl
 
 -- Witness 144: Law 30 (Discrete Lattice Boltzmann & Navier-Stokes Transport)
 public export
-auditDiscreteLatticeBoltzmannProofExport : Bool
-auditDiscreteLatticeBoltzmannProofExport = Math.DiscreteLatticeBoltzmann.auditDiscreteLatticeBoltzmannProof
+auditLatticeFluidTransportProofExport : Bool
+auditLatticeFluidTransportProofExport = Math.LatticeFluidTransport.auditLatticeFluidTransportProof
 
 public export
 %macro
-auditDiscreteLatticeBoltzmann : Elab (Reflect.Auditor.Geometry.auditDiscreteLatticeBoltzmannProofExport = True)
-auditDiscreteLatticeBoltzmann = pure Refl
+auditLatticeFluidTransport : Elab (Reflect.Auditor.Geometry.auditLatticeFluidTransportProofExport = True)
+auditLatticeFluidTransport = pure Refl
 
 -- Witness 175: Discrete Galois Einstein Curvature Tensor & Metric Shear
 public export

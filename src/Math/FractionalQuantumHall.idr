@@ -68,7 +68,7 @@ auditAnyonicBraidingPhaseProof =
   in natEq period 6
 
 ||| Audits Fractional Hall Conductance:
-||| Proves σ_{xy}(1/3) = 1/3 and σ_{xy}(2/5) = 2/5 on exact SingFractions.
+||| Proves σ_{xy}(1/3) = 1/3 and σ_{xy}(2/5) = 2/5 on exact UnixelFractions.
 public export
 auditFractionalHallConductanceProof : Bool
 auditFractionalHallConductanceProof =

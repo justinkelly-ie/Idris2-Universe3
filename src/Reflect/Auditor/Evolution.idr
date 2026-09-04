@@ -24,7 +24,7 @@ import public Math.CosmicInflation
 import public Math.QuantumStressTensor
 import public Compound.ActiveInferenceNeuralNetwork
 import Language.Reflection
-import public Math.DiscreteBoltzmannDistribution
+import public Math.ThermalDistribution
 
 %default total
 
@@ -53,7 +53,7 @@ auditLinearQTTConservationProofExport = Evolution.State.auditLinearQTTConservati
 -- Witness 48: Zero-Temperature Ground State Collapse
 public export
 auditZeroTemperatureGroundStateCollapseProofExport : Bool
-auditZeroTemperatureGroundStateCollapseProofExport = Math.DiscreteBoltzmannDistribution.auditZeroTemperatureGroundStateCollapseProof
+auditZeroTemperatureGroundStateCollapseProofExport = Math.ThermalDistribution.auditZeroTemperatureGroundStateCollapseProof
 
 
 -- Witness 81: Linear Cosmic Cycle Token Conservation

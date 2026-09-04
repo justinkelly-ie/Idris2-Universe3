@@ -34,7 +34,7 @@ audit27ClosureProof = auditTernaryClosureProofExport
 
 public export
 auditUnitDenomProof : Bool
-auditUnitDenomProof = auditSingFractionPositivityProofExport
+auditUnitDenomProof = auditUnixelFractionPositivityProofExport
 
 public export
 auditCanonicalRationalEquivProof : Bool

@@ -8,63 +8,63 @@ import public Core.TransformMultiset
 import Data.Vect
 import Data.List
 import Language.Reflection
-import public Math.AharonovBohmHolonomy
+import public Math.HolonomyPhase
 import public Math.CliffordAlgebra
 import public Math.ConstructiveBaryogenesis
-import public Math.DiscreteActionPrinciple
-import public Math.DiscreteAlfvénMHD
-import public Math.DiscreteBCSSuperconductivity
+import public Math.ActionPrinciple
+import public Math.Magnetohydrodynamics
+import public Math.SuperconductingGap
 import public Math.Infinitesimal
 
-import public Math.DiscreteBelousovZhabotinsky
-import public Math.DiscreteBohmianPotential
-import public Math.DiscreteBoltzmannDistribution
-import public Math.DiscreteCasimirEffect
-import public Math.DiscreteCasimirPolder
-import public Math.DiscreteChandrasekharLimit
-import public Math.DiscreteChernSimonsMass
-import public Math.DiscreteChiralAnomaly
-import public Math.DiscreteCosmicGenesis
-import public Math.DiscreteCrooksTheorem
-import public Math.DiscreteDiracSpinor
-import public Math.DiscreteHallViscosity
-import public Math.DiscreteHawkingPageTransition
-import public Math.DiscreteHawkingRadiation
-import public Math.DiscreteHodgkinHuxley
-import public Math.DiscreteHolographicBound
-import public Math.DiscreteHydrogenBonding
-import public Math.DiscreteIron56PeakBinding
-import public Math.DiscreteJarlskogInvariant
-import public Math.DiscreteJarzynskiEquality
-import public Math.DiscreteJaynesCummings
-import public Math.DiscreteKerrSpacetime
-import public Math.DiscreteLandauerBuettiker
-import public Math.DiscreteLandauerPrinciple
-import public Math.DiscreteMacromolecularChirality
-import public Math.DiscreteMichaelisMenten
-import public Math.DiscreteMonodWymanChangeux
-import public Math.DiscreteOnsagerReciprocity
-import public Math.DiscretePageCurve
-import public Math.DiscreteHiggsMechanism
-import public Math.DiscreteFeynmanLoop
+import public Math.OscillatingReactions
+import public Math.QuantumPotential
+import public Math.ThermalDistribution
+import public Math.VacuumDispersion
+import public Math.RetardedDipoleForce
+import public Math.DegeneracyMassLimit
+import public Math.TopologicalGaugeMass
+import public Math.ChiralAnomaly
+import public Math.CosmicGenesis
+import public Math.FluctuationTheorem
+import public Math.RelativisticSpinor
+import public Math.HallViscosity
+import public Math.BlackHolePhaseTransition
+import public Math.HorizonRadiation
+import public Math.ActionPotentialKinetics
+import public Math.HolographicBound
+import public Math.HydrogenBonding
+import public Math.PeakBindingEnergy
+import public Math.PhaseInvarianceMeasure
+import public Math.WorkFreeEnergyEquality
+import public Math.CavityQuantumElectrodynamics
+import public Math.RotatingSpacetime
+import public Math.MultiTerminalConduction
+import public Math.InformationErasureCost
+import public Math.MacromolecularChirality
+import public Math.EnzymeKinetics
+import public Math.AllostericCooperativity
+import public Math.ReciprocalTransport
+import public Math.EvaporationEntropyCurve
+import public Math.SymmetryBreakingMass
+import public Math.VacuumPolarization
 
-import public Math.DiscretePlasmaRecombination
-import public Math.DiscretePoyntingTheorem
-import public Math.DiscreteQCDStringTension
-import public Math.DiscreteQuantumTeleportation
-import public Math.DiscreteRationalKepler
-import public Math.DiscreteRationalSnell
-import public Math.DiscreteRibosomalTranslation
-import public Math.DiscreteRyuTakayanagi
-import public Math.DiscreteTOVLimit
-import public Math.DiscreteTopologicalInsulator
-import public Math.DiscreteToricCode
-import public Math.DiscreteTripleAlphaNucleosynthesis
-import public Math.DiscreteWatsonCrick
-import public Math.DiscreteWheelerDeWitt
+import public Math.PlasmaRecombination
+import public Math.ElectromagneticEnergyFlow
+import public Math.StringTension
+import public Math.QuantumTeleportation
+import public Math.RationalKepler
+import public Math.RationalRefraction
+import public Math.RibosomalTranslation
+import public Math.EntanglementAreaLaw
+import public Math.GravitationalCollapseLimit
+import public Math.TopologicalInsulator
+import public Math.ToricCode
+import public Math.TripleAlphaNucleosynthesis
+import public Math.NucleicAcidBasePairing
+import public Math.CosmologicalWaveEquation
 import public Math.DensityMatrix
 import public Math.GalacticRotationCurve
-import public Math.DiscreteFlavorMixing
+import public Math.FlavorMixing
 import public Math.NeutrinoOscillation
 import public Math.MuonG2Anomaly
 import public Math.LawAlgebra
@@ -77,12 +77,12 @@ import public Math.GaugeSpinorCoupling
 import public Math.GravitationalWaveDynamics
 import public Math.HelmholtzFreeEnergy
 import public Math.LinAlgebra.TernaryClassifier
-import public Math.PauliExclusion
+import public Math.ExclusionPrinciple
 import public Math.QuantumTransition
 import public Math.RGDecimator
 import public Math.RationalTrig
 import public Math.RenormalizationInformationFlow
-import public Math.ShannonHuffmanOptimality
+import public Math.PrefixCodeOptimality
 import public Math.SuperconductingFluxQuantization
 import public Math.TopologicalChernNumber
 import public Math.ToroidalAstrodynamics
@@ -109,7 +109,7 @@ auditCliffordGeometricProductProofExport = Math.CliffordAlgebra.auditCliffordGeo
 -- Witness 6: Discrete Noether Conservation
 public export
 auditDiscreteNoetherConservationProofExport : Bool
-auditDiscreteNoetherConservationProofExport = Math.DiscreteActionPrinciple.auditDiscreteMomentumConservationProof
+auditDiscreteNoetherConservationProofExport = Math.ActionPrinciple.auditDiscreteMomentumConservationProof
 
 
 -- Witness 17: Chromogeometric Cosmic Budget
@@ -169,61 +169,61 @@ auditFourGeometriesCosmicSynthesisProofExport = Math.FourGeometries.auditFourGeo
 -- Witness 40: Discrete Euler-Lagrange Equivalence
 public export
 auditDiscreteEulerLagrangeEquivalenceProofExport : Bool
-auditDiscreteEulerLagrangeEquivalenceProofExport = Math.DiscreteActionPrinciple.auditDiscreteEulerLagrangeEquivalenceProof
+auditDiscreteEulerLagrangeEquivalenceProofExport = Math.ActionPrinciple.auditDiscreteEulerLagrangeEquivalenceProof
 
 
 -- Witness 41: Substrate Action Asymmetry
 public export
 auditSubstrateActionAsymmetryProofExport : Bool
-auditSubstrateActionAsymmetryProofExport = Math.DiscreteActionPrinciple.auditSubstrateActionAsymmetryProof
+auditSubstrateActionAsymmetryProofExport = Math.ActionPrinciple.auditSubstrateActionAsymmetryProof
 
 
 -- Witness 42: Geodesic Least Action Optimality
 public export
 auditGeodesicLeastActionOptimalityProofExport : Bool
-auditGeodesicLeastActionOptimalityProofExport = Math.DiscreteActionPrinciple.auditGeodesicLeastActionOptimalityProof
+auditGeodesicLeastActionOptimalityProofExport = Math.ActionPrinciple.auditGeodesicLeastActionOptimalityProof
 
 
 -- Witness 43: Discrete Noether Momentum Conservation
 public export
 auditDiscreteMomentumConservationProofExport : Bool
-auditDiscreteMomentumConservationProofExport = Math.DiscreteActionPrinciple.auditDiscreteMomentumConservationProof
+auditDiscreteMomentumConservationProofExport = Math.ActionPrinciple.auditDiscreteMomentumConservationProof
 
 
 -- Witness 44: Parabolic Null Momentum Zero
 public export
 auditParabolicNullMomentumZeroProofExport : Bool
-auditParabolicNullMomentumZeroProofExport = Math.DiscreteActionPrinciple.auditParabolicNullMomentumZeroProof
+auditParabolicNullMomentumZeroProofExport = Math.ActionPrinciple.auditParabolicNullMomentumZeroProof
 
 
 -- Witness 45: Sector-Specific Action Signatures
 public export
 auditSectorSpecificActionSignaturesProofExport : Bool
-auditSectorSpecificActionSignaturesProofExport = Math.DiscreteActionPrinciple.auditSectorSpecificActionSignaturesProof
+auditSectorSpecificActionSignaturesProofExport = Math.ActionPrinciple.auditSectorSpecificActionSignaturesProof
 
 
 -- Witness 46: Discrete Boltzmann Probability Normalization
 public export
 auditBoltzmannProbabilityNormalizationProofExport : Bool
-auditBoltzmannProbabilityNormalizationProofExport = Math.DiscreteBoltzmannDistribution.auditBoltzmannProbabilityNormalizationProof
+auditBoltzmannProbabilityNormalizationProofExport = Math.ThermalDistribution.auditBoltzmannProbabilityNormalizationProof
 
 
 -- Witness 47: Cosmic Budget Partition Factorization
 public export
 auditCosmicBudgetPartitionFactorizationProofExport : Bool
-auditCosmicBudgetPartitionFactorizationProofExport = Math.DiscreteBoltzmannDistribution.auditCosmicBudgetPartitionFactorizationProof
+auditCosmicBudgetPartitionFactorizationProofExport = Math.ThermalDistribution.auditCosmicBudgetPartitionFactorizationProof
 
 
 -- Witness 49: Discrete Casimir Attractive Force (Law 3)
 public export
 auditCasimirAttractiveForceProofExport : Bool
-auditCasimirAttractiveForceProofExport = Math.DiscreteCasimirEffect.auditCasimirAttractiveForceProof
+auditCasimirAttractiveForceProofExport = Math.VacuumDispersion.auditCasimirAttractiveForceProof
 
 
 -- Witness 50: Discrete Vacuum Mode Confinement (Law 3)
 public export
 auditCasimirModeConfinementProofExport : Bool
-auditCasimirModeConfinementProofExport = Math.DiscreteCasimirEffect.auditCasimirModeConfinementProof
+auditCasimirModeConfinementProofExport = Math.VacuumDispersion.auditCasimirModeConfinementProof
 
 
 -- Witness 51: First Chern Number Integer Quantization (Law 4)
@@ -241,55 +241,55 @@ auditTopologicalHallConductanceProofExport = Math.TopologicalChernNumber.auditTo
 -- Witness 53: Topological Aharonov-Bohm Phase Shift (Law 5)
 public export
 auditAharonovBohmPhaseShiftProofExport : Bool
-auditAharonovBohmPhaseShiftProofExport = Math.AharonovBohmHolonomy.auditAharonovBohmPhaseShiftProof
+auditAharonovBohmPhaseShiftProofExport = Math.HolonomyPhase.auditAharonovBohmPhaseShiftProof
 
 
 -- Witness 54: Wilson Loop Gauge Closure (Law 5)
 public export
 auditWilsonLoopGaugeClosureProofExport : Bool
-auditWilsonLoopGaugeClosureProofExport = Math.AharonovBohmHolonomy.auditWilsonLoopGaugeClosureProof
+auditWilsonLoopGaugeClosureProofExport = Math.HolonomyPhase.auditWilsonLoopGaugeClosureProof
 
 
 -- Witness 55: Discrete Landauer Dissipation Lower Bound (Law 6)
 public export
 auditLandauerDissipationBoundProofExport : Bool
-auditLandauerDissipationBoundProofExport = Math.DiscreteLandauerPrinciple.auditLandauerDissipationBoundProof
+auditLandauerDissipationBoundProofExport = Math.InformationErasureCost.auditLandauerDissipationBoundProof
 
 
 -- Witness 56: Discrete Landauer Total Energy Conservation (Law 6)
 public export
 auditLandauerTotalConservationProofExport : Bool
-auditLandauerTotalConservationProofExport = Math.DiscreteLandauerPrinciple.auditLandauerTotalConservationProof
+auditLandauerTotalConservationProofExport = Math.InformationErasureCost.auditLandauerTotalConservationProof
 
 
 -- Witness 57: Parabolic Sink Entropy Monotonicity (Law 6)
 public export
 auditParabolicSinkMonotonicityProofExport : Bool
-auditParabolicSinkMonotonicityProofExport = Math.DiscreteLandauerPrinciple.auditParabolicSinkMonotonicityProof
+auditParabolicSinkMonotonicityProofExport = Math.InformationErasureCost.auditParabolicSinkMonotonicityProof
 
 
 -- Witness 58: Local Discrete Poynting Energy Balance (Law 7)
 public export
 auditLocalPoyntingBalanceProofExport : Bool
-auditLocalPoyntingBalanceProofExport = Math.DiscretePoyntingTheorem.auditLocalPoyntingBalanceProof
+auditLocalPoyntingBalanceProofExport = Math.ElectromagneticEnergyFlow.auditLocalPoyntingBalanceProof
 
 
 -- Witness 59: Vacuum Poynting Invariance (Law 7)
 public export
 auditVacuumPoyntingInvarianceProofExport : Bool
-auditVacuumPoyntingInvarianceProofExport = Math.DiscretePoyntingTheorem.auditVacuumPoyntingInvarianceProof
+auditVacuumPoyntingInvarianceProofExport = Math.ElectromagneticEnergyFlow.auditVacuumPoyntingInvarianceProof
 
 
 -- Witness 60: Toroidal Boundaryless Poynting Closure (Law 7)
 public export
 auditToroidalPoyntingClosureProofExport : Bool
-auditToroidalPoyntingClosureProofExport = Math.DiscretePoyntingTheorem.auditToroidalPoyntingClosureProof
+auditToroidalPoyntingClosureProofExport = Math.ElectromagneticEnergyFlow.auditToroidalPoyntingClosureProof
 
 
 -- Witness 61: Dirac Probability Density Positivity (Law 8)
 public export
 auditDiracCurrentPositivityProofExport : Bool
-auditDiracCurrentPositivityProofExport = Math.DiscreteDiracSpinor.auditDiracCurrentPositivityProof
+auditDiracCurrentPositivityProofExport = Math.RelativisticSpinor.auditDiracCurrentPositivityProof
 
 
 -- Witness 62: Discrete 4-Current Divergence Conservation (Law 8)
@@ -301,19 +301,19 @@ auditDiracCurrentConservationLaw8ProofExport = Math.CliffordAlgebra.auditDiracCu
 -- Witness 63: Chiral Projector Completeness & Idempotency (Law 8)
 public export
 auditChiralProjectorCompletenessProofExport : Bool
-auditChiralProjectorCompletenessProofExport = Math.DiscreteDiracSpinor.auditChiralProjectorCompletenessProof
+auditChiralProjectorCompletenessProofExport = Math.RelativisticSpinor.auditChiralProjectorCompletenessProof
 
 
 -- Witness 65: Fermionic Binary Occupancy Bound (Law 9)
 public export
 auditFermionicBinaryOccupancyProofExport : Bool
-auditFermionicBinaryOccupancyProofExport = Math.PauliExclusion.auditFermionicBinaryOccupancyProof
+auditFermionicBinaryOccupancyProofExport = Math.ExclusionPrinciple.auditFermionicBinaryOccupancyProof
 
 
 -- Witness 66: Zero-Temperature Fermi Surface Step Function (Law 9)
 public export
 auditZeroTemperatureFermiSurfaceProofExport : Bool
-auditZeroTemperatureFermiSurfaceProofExport = Math.PauliExclusion.auditZeroTemperatureFermiSurfaceProof
+auditZeroTemperatureFermiSurfaceProofExport = Math.ExclusionPrinciple.auditZeroTemperatureFermiSurfaceProof
 
 
 -- Witness 67: Transverse-Traceless Metric Shear Invariant (Law 10)
@@ -451,19 +451,19 @@ auditTullyFisherRelationProofExport = Math.GalacticRotationCurve.auditTullyFishe
 -- Witness 90: Kraft-McMillan Multiset Prefix-Free Inequality
 public export
 auditKraftMcMillanInequalityProofExport : Bool
-auditKraftMcMillanInequalityProofExport = Math.ShannonHuffmanOptimality.auditKraftMcMillanInequalityProof
+auditKraftMcMillanInequalityProofExport = Math.PrefixCodeOptimality.auditKraftMcMillanInequalityProof
 
 
 -- Witness 91: Stern-Brocot Rational Prefix Tree Optimality
 public export
 auditSternBrocotPrefixOptimalityProofExport : Bool
-auditSternBrocotPrefixOptimalityProofExport = Math.ShannonHuffmanOptimality.auditSternBrocotPrefixOptimalityProof
+auditSternBrocotPrefixOptimalityProofExport = Math.PrefixCodeOptimality.auditSternBrocotPrefixOptimalityProof
 
 
 -- Witness 92: Cyclotomic Kolmogorov Program Minimality
 public export
 auditCyclotomicKolmogorovMinimalityProofExport : Bool
-auditCyclotomicKolmogorovMinimalityProofExport = Math.ShannonHuffmanOptimality.auditCyclotomicKolmogorovMinimalityProof
+auditCyclotomicKolmogorovMinimalityProofExport = Math.PrefixCodeOptimality.auditCyclotomicKolmogorovMinimalityProof
 
 
 -- Witness 93: Discrete Helmholtz Free Energy Primorial 210 Minimization
@@ -481,19 +481,19 @@ auditSubstrateStationaryArrowProofExport = Math.HelmholtzFreeEnergy.auditSubstra
 -- Witness 99: Discrete 2D Holographic Boundary Area Law
 public export
 auditHolographicAreaLawProofExport : Bool
-auditHolographicAreaLawProofExport = Math.DiscreteHolographicBound.auditHolographicAreaLawProof
+auditHolographicAreaLawProofExport = Math.HolographicBound.auditHolographicAreaLawProof
 
 
 -- Witness 100: Bekenstein Holographic Capacity Saturation
 public export
 auditBekensteinSaturationProofExport : Bool
-auditBekensteinSaturationProofExport = Math.DiscreteHolographicBound.auditBekensteinSaturationProof
+auditBekensteinSaturationProofExport = Math.HolographicBound.auditBekensteinSaturationProof
 
 
 -- Witness 101: Cosmic Budget 210 Holographic Closure
 public export
 auditCosmicBudgetHolographicClosureProofExport : Bool
-auditCosmicBudgetHolographicClosureProofExport = Math.DiscreteHolographicBound.auditCosmicBudgetHolographicClosureProof
+auditCosmicBudgetHolographicClosureProofExport = Math.HolographicBound.auditCosmicBudgetHolographicClosureProof
 
 
 -- Witness 102: Fractional Quasiparticle Charge Quantization
@@ -517,55 +517,55 @@ auditFractionalHallConductanceProofExport = Math.FractionalQuantumHall.auditFrac
 -- Witness 105: Discrete Second Law Dissipated Work Non-Negativity
 public export
 auditDiscreteSecondLawProofExport : Bool
-auditDiscreteSecondLawProofExport = Math.DiscreteJarzynskiEquality.auditDiscreteSecondLawProof
+auditDiscreteSecondLawProofExport = Math.WorkFreeEnergyEquality.auditDiscreteSecondLawProof
 
 
 -- Witness 106: Discrete Jarzynski Exponential Normalization Identity
 public export
-auditDiscreteJarzynskiEqualityProofExport : Bool
-auditDiscreteJarzynskiEqualityProofExport = Math.DiscreteJarzynskiEquality.auditDiscreteJarzynskiEqualityProof
+auditWorkFreeEnergyEqualityProofExport : Bool
+auditWorkFreeEnergyEqualityProofExport = Math.WorkFreeEnergyEquality.auditWorkFreeEnergyEqualityProof
 
 
 -- Witness 107: Fluctuation-Dissipation Trajectory Variance Relation
 public export
 auditFluctuationDissipationProofExport : Bool
-auditFluctuationDissipationProofExport = Math.DiscreteJarzynskiEquality.auditFluctuationDissipationProof
+auditFluctuationDissipationProofExport = Math.WorkFreeEnergyEquality.auditFluctuationDissipationProof
 
 
 -- Witness 108: Scaled DeWitt Supermetric Invariance
 public export
 auditDeWittSupermetricProofExport : Bool
-auditDeWittSupermetricProofExport = Math.DiscreteWheelerDeWitt.auditDeWittSupermetricProof
+auditDeWittSupermetricProofExport = Math.CosmologicalWaveEquation.auditDeWittSupermetricProof
 
 
 -- Witness 109: Zero Super-Hamiltonian Vanishing Constraint
 public export
 auditZeroWheelerDeWittConstraintProofExport : Bool
-auditZeroWheelerDeWittConstraintProofExport = Math.DiscreteWheelerDeWitt.auditZeroWheelerDeWittConstraintProof
+auditZeroWheelerDeWittConstraintProofExport = Math.CosmologicalWaveEquation.auditZeroWheelerDeWittConstraintProof
 
 
 -- Witness 110: Relational Cosmic Energy Conservation
 public export
 auditRelationalCosmicEnergyConservationProofExport : Bool
-auditRelationalCosmicEnergyConservationProofExport = Math.DiscreteWheelerDeWitt.auditRelationalCosmicEnergyConservationProof
+auditRelationalCosmicEnergyConservationProofExport = Math.CosmologicalWaveEquation.auditRelationalCosmicEnergyConservationProof
 
 
 -- Witness 111: Discrete Dirac Chiral Zero-Mode Index
 public export
 auditChiralZeroModeIndexProofExport : Bool
-auditChiralZeroModeIndexProofExport = Math.DiscreteChiralAnomaly.auditChiralZeroModeIndexProof
+auditChiralZeroModeIndexProofExport = Math.ChiralAnomaly.auditChiralZeroModeIndexProof
 
 
 -- Witness 112: Discrete Second Chern Instanton Charge Quantization
 public export
 auditDiscreteSecondChernInstantonProofExport : Bool
-auditDiscreteSecondChernInstantonProofExport = Math.DiscreteChiralAnomaly.auditDiscreteSecondChernInstantonProof
+auditDiscreteSecondChernInstantonProofExport = Math.ChiralAnomaly.auditDiscreteSecondChernInstantonProof
 
 
 -- Witness 113: Discrete Atiyah-Singer Index Theorem Equivalence
 public export
 auditAtiyahSingerIndexTheoremProofExport : Bool
-auditAtiyahSingerIndexTheoremProofExport = Math.DiscreteChiralAnomaly.auditAtiyahSingerIndexTheoremProof
+auditAtiyahSingerIndexTheoremProofExport = Math.ChiralAnomaly.auditAtiyahSingerIndexTheoremProof
 
 
 -- Witness 119: Box Difference Quadrance & Rational Spread Metrics
@@ -578,7 +578,7 @@ auditBoxQuadranceAndSpreadProofExport =
 -- Witness 120: Caret-FIA Boltzmann Partition Factorization & Cosmic Free Energy
 public export
 auditCaretBoltzmannPartitionProofExport : Bool
-auditCaretBoltzmannPartitionProofExport = Math.DiscreteBoltzmannDistribution.auditCaretBoltzmannPartitionProof
+auditCaretBoltzmannPartitionProofExport = Math.ThermalDistribution.auditCaretBoltzmannPartitionProof
 
 
 -- Witness 122: Doubly Stochastic Magic Maxel RG Decimation Kernel
@@ -596,223 +596,223 @@ auditRationalKeplerLawsProofExport = Math.ToroidalAstrodynamics.auditRationalKep
 -- Witness 124: Dyck-Huffman Codes & Holographic Boundary Transmission
 public export
 auditDyckHuffmanHolographicProofExport : Bool
-auditDyckHuffmanHolographicProofExport = Math.ShannonHuffmanOptimality.auditDyckHuffmanHolographicProof
+auditDyckHuffmanHolographicProofExport = Math.PrefixCodeOptimality.auditDyckHuffmanHolographicProof
 
 
 -- Witness 128: Law 18: Discrete Cosmic Genesis & Primordial Relic Freeze-Out
 public export
 auditCosmicGenesisRelicFreezeOutProofExport : Bool
-auditCosmicGenesisRelicFreezeOutProofExport = Math.DiscreteCosmicGenesis.auditCosmicGenesisRelicFreezeOutProof
+auditCosmicGenesisRelicFreezeOutProofExport = Math.CosmicGenesis.auditCosmicGenesisRelicFreezeOutProof
 
 
 -- Witness 129: Law 19: Discrete Hawking-Unruh Boundary Thermal Radiation
 public export
-auditDiscreteHawkingRadiationProofExport : Bool
-auditDiscreteHawkingRadiationProofExport = Math.DiscreteHawkingRadiation.auditDiscreteHawkingRadiationProof
+auditHorizonRadiationProofExport : Bool
+auditHorizonRadiationProofExport = Math.HorizonRadiation.auditHorizonRadiationProof
 
 
 -- Witness 130: Law 20: Discrete Hall Viscosity & Topological Transport
 public export
-auditDiscreteHallViscosityProofExport : Bool
-auditDiscreteHallViscosityProofExport = Math.DiscreteHallViscosity.auditDiscreteHallViscosityProof
+auditHallViscosityProofExport : Bool
+auditHallViscosityProofExport = Math.HallViscosity.auditHallViscosityProof
 
 
 -- Witness 131: Law 21: Discrete Page Curve & Unitary Evaporation
 public export
-auditDiscretePageCurveProofExport : Bool
-auditDiscretePageCurveProofExport = Math.DiscretePageCurve.auditDiscretePageCurveProof
+auditEvaporationEntropyCurveProofExport : Bool
+auditEvaporationEntropyCurveProofExport = Math.EvaporationEntropyCurve.auditEvaporationEntropyCurveProof
 
 
 -- Witness 132: Law 22: Discrete Onsager Reciprocal Relations
 public export
-auditDiscreteOnsagerReciprocityProofExport : Bool
-auditDiscreteOnsagerReciprocityProofExport = Math.DiscreteOnsagerReciprocity.auditDiscreteOnsagerReciprocityProof
+auditReciprocalTransportProofExport : Bool
+auditReciprocalTransportProofExport = Math.ReciprocalTransport.auditReciprocalTransportProof
 
 
 -- Witness 133: Law 23: Discrete Chern-Simons Topological Mass Generation
 public export
-auditDiscreteChernSimonsMassProofExport : Bool
-auditDiscreteChernSimonsMassProofExport = Math.DiscreteChernSimonsMass.auditDiscreteChernSimonsMassProof
+auditTopologicalGaugeMassProofExport : Bool
+auditTopologicalGaugeMassProofExport = Math.TopologicalGaugeMass.auditTopologicalGaugeMassProof
 
 
 -- Witness 134: Law 24: Discrete TOV Gravitational Mass Limit
 public export
-auditDiscreteTOVLimitProofExport : Bool
-auditDiscreteTOVLimitProofExport = Math.DiscreteTOVLimit.auditDiscreteTOVLimitProof
+auditGravitationalCollapseLimitProofExport : Bool
+auditGravitationalCollapseLimitProofExport = Math.GravitationalCollapseLimit.auditGravitationalCollapseLimitProof
 
 
 -- Witness 135: Law 25: Discrete Crooks Fluctuation Theorem
 public export
-auditDiscreteCrooksTheoremProofExport : Bool
-auditDiscreteCrooksTheoremProofExport = Math.DiscreteCrooksTheorem.auditDiscreteCrooksTheoremProof
+auditFluctuationTheoremProofExport : Bool
+auditFluctuationTheoremProofExport = Math.FluctuationTheorem.auditFluctuationTheoremProof
 
 
 -- Witness 136: Law 26: Discrete Casimir-Polder & London Dispersion Forces
 public export
-auditDiscreteCasimirPolderProofExport : Bool
-auditDiscreteCasimirPolderProofExport = Math.DiscreteCasimirPolder.auditDiscreteCasimirPolderProof
+auditRetardedDipoleForceProofExport : Bool
+auditRetardedDipoleForceProofExport = Math.RetardedDipoleForce.auditRetardedDipoleForceProof
 
 
 -- Witness 137: Law 27: Discrete Bohmian Quantum Potential & Causal Trajectories
 public export
-auditDiscreteBohmianPotentialProofExport : Bool
-auditDiscreteBohmianPotentialProofExport = Math.DiscreteBohmianPotential.auditDiscreteBohmianPotentialProof
+auditQuantumPotentialProofExport : Bool
+auditQuantumPotentialProofExport = Math.QuantumPotential.auditQuantumPotentialProof
 
 
 -- Witness 138: Law 28: Discrete Landauer-Büttiker Multi-Terminal Conduction
 public export
-auditDiscreteLandauerBuettikerProofExport : Bool
-auditDiscreteLandauerBuettikerProofExport = Math.DiscreteLandauerBuettiker.auditDiscreteLandauerBuettikerProof
+auditMultiTerminalConductionProofExport : Bool
+auditMultiTerminalConductionProofExport = Math.MultiTerminalConduction.auditMultiTerminalConductionProof
 
 
 -- Witness 143: Law 29 (Discrete BCS Superconducting Energy Gap)
 public export
-auditDiscreteBCSSuperconductivityProofExport : Bool
-auditDiscreteBCSSuperconductivityProofExport = Math.DiscreteBCSSuperconductivity.auditDiscreteBCSSuperconductivityProof
+auditSuperconductingGapProofExport : Bool
+auditSuperconductingGapProofExport = Math.SuperconductingGap.auditSuperconductingGapProof
 
 
 -- Witness 145: Law 31 (Discrete Belousov-Zhabotinsky Chemical Oscillations)
 public export
-auditDiscreteBelousovZhabotinskyProofExport : Bool
-auditDiscreteBelousovZhabotinskyProofExport = Math.DiscreteBelousovZhabotinsky.auditDiscreteBelousovZhabotinskyProof
+auditOscillatingReactionsProofExport : Bool
+auditOscillatingReactionsProofExport = Math.OscillatingReactions.auditOscillatingReactionsProof
 
 
 -- Witness 146: Law 32 (Discrete Topological Insulator Bulk-Boundary Correspondence)
 public export
-auditDiscreteTopologicalInsulatorProofExport : Bool
-auditDiscreteTopologicalInsulatorProofExport = Math.DiscreteTopologicalInsulator.auditDiscreteTopologicalInsulatorProof
+auditTopologicalInsulatorProofExport : Bool
+auditTopologicalInsulatorProofExport = Math.TopologicalInsulator.auditTopologicalInsulatorProof
 
 
 -- Witness 147: Law 33 (Discrete Quantum Teleportation & Entanglement Swapping)
 public export
-auditDiscreteQuantumTeleportationProofExport : Bool
-auditDiscreteQuantumTeleportationProofExport = Math.DiscreteQuantumTeleportation.auditDiscreteQuantumTeleportationProof
+auditQuantumTeleportationProofExport : Bool
+auditQuantumTeleportationProofExport = Math.QuantumTeleportation.auditQuantumTeleportationProof
 
 
 -- Witness 148: Law 34 (Discrete Jaynes-Cummings Cavity QED & Vacuum Rabi Splitting)
 public export
-auditDiscreteJaynesCummingsProofExport : Bool
-auditDiscreteJaynesCummingsProofExport = Math.DiscreteJaynesCummings.auditDiscreteJaynesCummingsProof
+auditCavityQuantumElectrodynamicsProofExport : Bool
+auditCavityQuantumElectrodynamicsProofExport = Math.CavityQuantumElectrodynamics.auditCavityQuantumElectrodynamicsProof
 
 
 -- Witness 149: Law 35 (Discrete Ryu-Takayanagi Holographic Entanglement Formula)
 public export
-auditDiscreteRyuTakayanagiProofExport : Bool
-auditDiscreteRyuTakayanagiProofExport = Math.DiscreteRyuTakayanagi.auditDiscreteRyuTakayanagiProof
+auditEntanglementAreaLawProofExport : Bool
+auditEntanglementAreaLawProofExport = Math.EntanglementAreaLaw.auditEntanglementAreaLawProof
 
 
 -- Witness 150: Law 36 (Discrete Kitaev Toric Code & Error Correction)
 public export
-auditDiscreteToricCodeProofExport : Bool
-auditDiscreteToricCodeProofExport = Math.DiscreteToricCode.auditDiscreteToricCodeProof
+auditToricCodeProofExport : Bool
+auditToricCodeProofExport = Math.ToricCode.auditToricCodeProof
 
 
 -- Witness 151: Law 37 (Discrete Michaelis-Menten Enzyme Kinetics)
 public export
-auditDiscreteMichaelisMentenProofExport : Bool
-auditDiscreteMichaelisMentenProofExport = Math.DiscreteMichaelisMenten.auditDiscreteMichaelisMentenProof
+auditEnzymeKineticsProofExport : Bool
+auditEnzymeKineticsProofExport = Math.EnzymeKinetics.auditEnzymeKineticsProof
 
 
 -- Witness 152: Law 38 (Discrete Hodgkin-Huxley Action Potentials)
 public export
-auditDiscreteHodgkinHuxleyProofExport : Bool
-auditDiscreteHodgkinHuxleyProofExport = Math.DiscreteHodgkinHuxley.auditDiscreteHodgkinHuxleyProof
+auditActionPotentialKineticsProofExport : Bool
+auditActionPotentialKineticsProofExport = Math.ActionPotentialKinetics.auditActionPotentialKineticsProof
 
 
 -- Witness 153: Law 39 (Discrete Monod-Wyman-Changeux Allostery)
 public export
-auditDiscreteMonodWymanChangeuxProofExport : Bool
-auditDiscreteMonodWymanChangeuxProofExport = Math.DiscreteMonodWymanChangeux.auditDiscreteMonodWymanChangeuxProof
+auditAllostericCooperativityProofExport : Bool
+auditAllostericCooperativityProofExport = Math.AllostericCooperativity.auditAllostericCooperativityProof
 
 
 -- Witness 154: Law 40 (Discrete Ribosomal Translation & Genetic Code)
 public export
-auditDiscreteRibosomalTranslationProofExport : Bool
-auditDiscreteRibosomalTranslationProofExport = Math.DiscreteRibosomalTranslation.auditDiscreteRibosomalTranslationProof
+auditRibosomalTranslationProofExport : Bool
+auditRibosomalTranslationProofExport = Math.RibosomalTranslation.auditRibosomalTranslationProof
 
 
 -- Witness 155: Law 41 (Discrete Kerr Spacetime & Penrose Process)
 public export
-auditDiscreteKerrSpacetimeProofExport : Bool
-auditDiscreteKerrSpacetimeProofExport = Math.DiscreteKerrSpacetime.auditDiscreteKerrSpacetimeProof
+auditRotatingSpacetimeProofExport : Bool
+auditRotatingSpacetimeProofExport = Math.RotatingSpacetime.auditRotatingSpacetimeProof
 
 
 -- Witness 156: Law 42 (Discrete Alfvén MHD & Flux Freezing)
 public export
-auditDiscreteAlfvénMHDProofExport : Bool
-auditDiscreteAlfvénMHDProofExport = Math.DiscreteAlfvénMHD.auditDiscreteAlfvénMHDProof
+auditMagnetohydrodynamicsProofExport : Bool
+auditMagnetohydrodynamicsProofExport = Math.Magnetohydrodynamics.auditMagnetohydrodynamicsProof
 
 
 -- Witness 157: Law 43 (Discrete Chandrasekhar Degeneracy Limit)
 public export
-auditDiscreteChandrasekharLimitProofExport : Bool
-auditDiscreteChandrasekharLimitProofExport = Math.DiscreteChandrasekharLimit.auditDiscreteChandrasekharLimitProof
+auditDegeneracyMassLimitProofExport : Bool
+auditDegeneracyMassLimitProofExport = Math.DegeneracyMassLimit.auditDegeneracyMassLimitProof
 
 
 -- Witness 158: Law 44 (Discrete Hawking-Page Phase Transition)
 public export
-auditDiscreteHawkingPageTransitionProofExport : Bool
-auditDiscreteHawkingPageTransitionProofExport = Math.DiscreteHawkingPageTransition.auditDiscreteHawkingPageTransitionProof
+auditBlackHolePhaseTransitionProofExport : Bool
+auditBlackHolePhaseTransitionProofExport = Math.BlackHolePhaseTransition.auditBlackHolePhaseTransitionProof
 
 
 -- Witness 159: Law 46 (Discrete Jarlskog CP-Violation Invariant)
 public export
 auditJarlskogCPViolationProofExport : Bool
-auditJarlskogCPViolationProofExport = Math.DiscreteJarlskogInvariant.auditJarlskogCPViolationProof
+auditJarlskogCPViolationProofExport = Math.PhaseInvarianceMeasure.auditJarlskogCPViolationProof
 
 
 -- Witness 160: Law 47 (Discrete QCD String Tension & Regge Trajectories)
 public export
 auditQCDStringTensionProofExport : Bool
-auditQCDStringTensionProofExport = Math.DiscreteQCDStringTension.auditQCDStringTensionProof
+auditQCDStringTensionProofExport = Math.StringTension.auditQCDStringTensionProof
 
 
 -- Witness 161: Law 48 (Watson-Crick Base Pair Complementarity & Polyphosphates)
 public export
 auditLaw48WatsonCrickProofExport : Bool
-auditLaw48WatsonCrickProofExport = Math.DiscreteWatsonCrick.auditLaw48WatsonCrickProof
+auditLaw48WatsonCrickProofExport = Math.NucleicAcidBasePairing.auditLaw48WatsonCrickProof
 
 
 -- Witness 162: Law 49 (Macromolecular Homochirality & Peptide Condensation)
 public export
 auditLaw49MacromolecularChiralityProofExport : Bool
-auditLaw49MacromolecularChiralityProofExport = Math.DiscreteMacromolecularChirality.auditLaw49MacromolecularChiralityProof
+auditLaw49MacromolecularChiralityProofExport = Math.MacromolecularChirality.auditLaw49MacromolecularChiralityProof
 
 
 -- Witness 163: Law 50 (Hydrogen Bond Network & Quadrea Geometry)
 public export
 auditLaw50HydrogenBondingProofExport : Bool
-auditLaw50HydrogenBondingProofExport = Math.DiscreteHydrogenBonding.auditLaw50HydrogenBondingProof
+auditLaw50HydrogenBondingProofExport = Math.HydrogenBonding.auditLaw50HydrogenBondingProof
 
 
 -- Witness 164: Law 51 (Plasma Recombination & Cosmic Microwave Decoupling)
 public export
 auditLaw51PlasmaRecombinationProofExport : Bool
-auditLaw51PlasmaRecombinationProofExport = Math.DiscretePlasmaRecombination.auditLaw51PlasmaRecombinationProof
+auditLaw51PlasmaRecombinationProofExport = Math.PlasmaRecombination.auditLaw51PlasmaRecombinationProof
 
 
 -- Witness 165: Law 52 (Triple-Alpha Carbon & Phosphorus Nucleosynthesis)
 public export
 auditLaw52TripleAlphaProofExport : Bool
-auditLaw52TripleAlphaProofExport = Math.DiscreteTripleAlphaNucleosynthesis.auditLaw52TripleAlphaProof
+auditLaw52TripleAlphaProofExport = Math.TripleAlphaNucleosynthesis.auditLaw52TripleAlphaProof
 
 
 -- Witness 166: Law 53 (Stellar Nucleosynthesis & Iron-56 Peak Binding)
 public export
 auditLaw53Iron56PeakBindingProofExport : Bool
-auditLaw53Iron56PeakBindingProofExport = Math.DiscreteIron56PeakBinding.auditLaw53Iron56PeakBindingProof
+auditLaw53Iron56PeakBindingProofExport = Math.PeakBindingEnergy.auditLaw53Iron56PeakBindingProof
 
 
 -- Witness 167: Law 54 (Rational Kepler Laws & Toroidal Orbits)
 public export
 auditLaw54RationalKeplerProofExport : Bool
-auditLaw54RationalKeplerProofExport = Math.DiscreteRationalKepler.auditLaw54RationalKeplerProof
+auditLaw54RationalKeplerProofExport = Math.RationalKepler.auditLaw54RationalKeplerProof
 
 
 -- Witness 168: Law 55 (Rational Snell's Law & Triple Spread Law)
 public export
 auditLaw55RationalSnellProofExport : Bool
-auditLaw55RationalSnellProofExport = Math.DiscreteRationalSnell.auditLaw55RationalSnellProof
+auditLaw55RationalSnellProofExport = Math.RationalRefraction.auditLaw55RationalSnellProof
 
 
 -- Witness 169: Law Algebra Monoid Composition
@@ -866,7 +866,7 @@ auditGalacticRotationTimeSeries = pure Refl
 -- Witness 176: Constructive Anti-Matter Multiset Pair Annihilation & CKM/PMNS CP-Violation Unitarity
 public export
 auditAntiMatterAnnihilationProofExport : Bool
-auditAntiMatterAnnihilationProofExport = Math.DiscreteFlavorMixing.auditAntiMatterAnnihilationProof
+auditAntiMatterAnnihilationProofExport = Math.FlavorMixing.auditAntiMatterAnnihilationProof
 
 public export
 %macro
@@ -896,7 +896,7 @@ auditParallelPushforward = pure Refl
 -- Witness 184: Discrete Higgs Mechanism Potential & Vacuum Stability
 public export
 auditHiggsVacuumStabilityProofExport : Bool
-auditHiggsVacuumStabilityProofExport = Math.DiscreteHiggsMechanism.auditHiggsVacuumStabilityProof
+auditHiggsVacuumStabilityProofExport = Math.SymmetryBreakingMass.auditHiggsVacuumStabilityProof
 
 public export
 %macro
@@ -905,13 +905,13 @@ auditHiggsVacuumStability = pure Refl
 
 -- Witness 185: 1-Loop Discrete Vacuum Polarization Running Coupling
 public export
-auditDiscreteFeynmanLoopProofExport : Bool
-auditDiscreteFeynmanLoopProofExport = Math.DiscreteFeynmanLoop.auditDiscreteFeynmanLoopProof
+auditVacuumPolarizationProofExport : Bool
+auditVacuumPolarizationProofExport = Math.VacuumPolarization.auditVacuumPolarizationProof
 
 public export
 %macro
-auditDiscreteFeynmanLoop : Elab (Reflect.Auditor.Math.auditDiscreteFeynmanLoopProofExport = True)
-auditDiscreteFeynmanLoop = pure Refl
+auditVacuumPolarization : Elab (Reflect.Auditor.Math.auditVacuumPolarizationProofExport = True)
+auditVacuumPolarization = pure Refl
 
 
 -- Witness 182: Muon g-2 Anomaly & Discrete Loop Correction Engine
